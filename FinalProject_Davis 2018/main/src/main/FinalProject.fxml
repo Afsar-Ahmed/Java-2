@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="325.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.finalProjectController">
+  <tabs>
+    <Tab fx:id="Bagel" text="Bagel Type">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" blendMode="COLOR_BURN" nodeOrientation="RIGHT_TO_LEFT" prefHeight="213.0" prefWidth="108.0">
+                     <children>
+                        <RadioButton fx:id="none" mnemonicParsing="false" onAction="#sendNone" prefHeight="49.0" prefWidth="113.0" selected="true" text="None">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="BagelOptions" />
+                           </toggleGroup>
+                           <effect>
+                              <Lighting diffuseConstant="0.19" light="$null" specularConstant="0.0" specularExponent="6.98" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect></RadioButton>
+                        <RadioButton fx:id="white" mnemonicParsing="false" onAction="#sendWhite" prefHeight="47.0" prefWidth="114.0" text="White" toggleGroup="$BagelOptions">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                           <effect>
+                              <Lighting diffuseConstant="0.19" light="$null" specularConstant="0.0" specularExponent="6.98" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect></RadioButton>
+                        <RadioButton fx:id="wholeWheat" mnemonicParsing="false" onAction="#sendWW" prefHeight="50.0" prefWidth="115.0" text="Whole Wheat" toggleGroup="$BagelOptions">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                           <effect>
+                              <Lighting diffuseConstant="0.19" light="$null" specularConstant="0.0" specularExponent="6.98" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect></RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="213.0" prefWidth="94.0">
+                     <children>
+                        <Label prefHeight="35.0" prefWidth="66.0" text="#Qty:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></Label>
+                        <TextField fx:id="whiteQty" onAction="#sendWhite">
+                           <VBox.margin>
+                              <Insets top="60.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="wwQty" onAction="#sendWW">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="hiddenPane" disable="true" prefHeight="247.0" prefWidth="108.0">
+                     <children>
+                        <CheckBox fx:id="check1" mnemonicParsing="false" onAction="#checkToppings" text="starfruit">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="check2" mnemonicParsing="false" onAction="#checkToppings" text="starfish">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="check3" mnemonicParsing="false" onAction="#checkToppings" text="jellybeans">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="check4" mnemonicParsing="false" onAction="#checkToppings" text="oranges">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="check5" mnemonicParsing="false" onAction="#checkToppings" text="Pizza">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin></CheckBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </content></Tab>
+    <Tab fx:id="Drink" text="Drinks">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" blendMode="COLOR_BURN" nodeOrientation="RIGHT_TO_LEFT" prefHeight="171.0" prefWidth="126.0">
+                     <children>
+                        <RadioButton fx:id="soda" contentDisplay="TOP" mnemonicParsing="false" onAction="#sendSoda" prefHeight="49.0" prefWidth="94.0" text="Soda">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="DrinkOptions" />
+                           </toggleGroup>
+                           <effect>
+                              <Lighting diffuseConstant="0.28" light="$null" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect></RadioButton>
+                        <RadioButton fx:id="tea" mnemonicParsing="false" onAction="#sendTea" prefHeight="47.0" prefWidth="92.0" text="Tea" toggleGroup="$DrinkOptions">
+                           <effect>
+                              <Lighting diffuseConstant="0.28" light="$null" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect></RadioButton>
+                        <RadioButton fx:id="coffee" mnemonicParsing="false" onAction="#sendCoffee" prefHeight="50.0" prefWidth="94.0" text="Coffee" toggleGroup="$DrinkOptions">
+                           <effect>
+                              <Lighting diffuseConstant="0.28" light="$null" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.0">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect></RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="247.0" prefWidth="110.0">
+                     <children>
+                        <Label prefHeight="43.0" prefWidth="90.0" text="#Qty:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <TextField fx:id="sodaQty" onAction="#sendSoda" prefHeight="26.0" prefWidth="100.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="teaQty" onAction="#sendTea">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="coffeeQty" onAction="#sendCoffee">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </content></Tab>
+      <Tab fx:id="Result" text="Total">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextArea fx:id="reciept" editable="false" layoutX="42.0" prefHeight="171.0" prefWidth="267.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                  <Button fx:id="submit" layoutX="128.0" layoutY="187.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+                  <Button layoutX="274.0" layoutY="187.0" mnemonicParsing="false" onAction="#closeExit" text="Exit" />
+                  <Button fx:id="reset" layoutX="7.0" layoutY="187.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <effect>
+      <InnerShadow />
+   </effect>
+</TabPane>
